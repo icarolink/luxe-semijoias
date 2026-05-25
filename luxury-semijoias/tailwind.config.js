@@ -21,13 +21,27 @@ const config = {
         },
       },
       fontFamily: {
-        serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
-        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        serif: ['Playfair Display', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+      },
+      fontSize: {
+        'xxs': '0.65rem',
+      },
+      spacing: {
+        '128': '32rem',
+        '144': '36rem',
+      },
+      borderRadius: {
+        'xl': '1rem',
+        '2xl': '1.5rem',
+        '3xl': '2rem',
+        'full': '9999px',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
         'slide-up': 'slideUp 0.6s ease-out forwards',
         'slide-down': 'slideDown 0.3s ease-out forwards',
+        'scale-in': 'scaleIn 0.3s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
@@ -42,6 +56,15 @@ const config = {
           '0%': { opacity: '0', transform: 'translateY(-10px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+      },
+      boxShadow: {
+        'soft': '0 2px 15px rgba(0, 0, 0, 0.05)',
+        'medium': '0 4px 25px rgba(0, 0, 0, 0.08)',
+        'large': '0 10px 40px rgba(0, 0, 0, 0.12)',
       },
     },
   },

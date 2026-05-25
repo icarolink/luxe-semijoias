@@ -97,7 +97,7 @@ const products: Product[] = [
 
 export default function ProductShowcase() {
   return (
-    <section id="colecao" className="py-20 bg-white">
+    <section id="colecao" className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -105,22 +105,22 @@ export default function ProductShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">
+          <span className="text-gold uppercase tracking-[0.2em] text-xs sm:text-sm font-medium">
             Coleção Exclusiva
           </span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mt-4 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mt-3 sm:mt-4 mb-4 sm:mb-6">
             Nossas Peças
           </h2>
-          <p className="text-gray-600 font-light max-w-2xl mx-auto text-lg">
+          <p className="text-sm sm:text-base text-gray-600 font-light max-w-2xl mx-auto px-4">
             Cada peça é cuidadosamente selecionada para oferecer o máximo 
             de elegância e sofisticação.
           </p>
         </motion.div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
@@ -132,12 +132,12 @@ export default function ProductShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-16"
+          className="text-center mt-12 sm:mt-16"
         >
-          <button className="group inline-flex items-center gap-3 border-2 border-black px-10 py-4 rounded-full font-medium tracking-wide hover:bg-black hover:text-white transition-all duration-300">
+          <button className="group inline-flex items-center gap-2 sm:gap-3 border-2 border-black px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base tracking-wide hover:bg-black hover:text-white transition-all duration-300">
             Ver Coleção Completa
             <svg
-              className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+              className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

@@ -15,19 +15,19 @@ export default function CategoryCarousel() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-16 bg-gray-ultra">
+    <section className="py-12 sm:py-16 bg-gray-ultra">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold mb-3 sm:mb-4">
             Categorias
           </h2>
-          <p className="text-gray-600 font-light max-w-md mx-auto">
+          <p className="text-sm sm:text-base text-gray-600 font-light max-w-md mx-auto px-4">
             Explore nossa curadoria de peças exclusivas
           </p>
         </motion.div>
@@ -35,7 +35,7 @@ export default function CategoryCarousel() {
         {/* Carousel */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4 sm:mx-0 sm:px-0"
+          className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4 sm:mx-0 sm:px-0"
           style={{ scrollBehavior: 'smooth' }}
         >
           {categories.map((category, index) => (
@@ -49,7 +49,7 @@ export default function CategoryCarousel() {
               whileHover={{ y: -8, scale: 1.02 }}
               className="flex-shrink-0 group cursor-pointer"
             >
-              <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-lg">
+              <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-2 sm:border-4 border-white shadow-md sm:shadow-lg">
                 <img
                   src={category.image}
                   alt={category.name}
@@ -57,13 +57,13 @@ export default function CategoryCarousel() {
                   loading="lazy"
                 />
                 {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white text-sm uppercase tracking-widest font-medium">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-2">
+                  <span className="text-white text-xs sm:text-sm uppercase tracking-widest font-medium text-center">
                     Ver {category.name}
                   </span>
                 </div>
               </div>
-              <p className="text-center mt-4 text-sm uppercase tracking-widest font-medium text-gray-700 group-hover:text-gold transition-colors">
+              <p className="text-center mt-3 sm:mt-4 text-xs sm:text-sm uppercase tracking-widest font-medium text-gray-700 group-hover:text-gold transition-colors">
                 {category.name}
               </p>
             </motion.a>
@@ -71,22 +71,22 @@ export default function CategoryCarousel() {
         </div>
 
         {/* Navigation Arrows - Desktop */}
-        <div className="hidden md:flex justify-center gap-4 mt-8">
+        <div className="hidden md:flex justify-center gap-4 mt-6 sm:mt-8">
           <button
             onClick={() => scrollRef.current?.scrollBy({ left: -300, behavior: 'smooth' })}
-            className="p-3 rounded-full border border-gray-300 hover:border-gold hover:bg-gold hover:text-white transition-all duration-300"
+            className="p-2 sm:p-3 rounded-full border border-gray-300 hover:border-gold hover:bg-gold hover:text-white transition-all duration-300"
             aria-label="Scroll left"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <button
             onClick={() => scrollRef.current?.scrollBy({ left: 300, behavior: 'smooth' })}
-            className="p-3 rounded-full border border-gray-300 hover:border-gold hover:bg-gold hover:text-white transition-all duration-300"
+            className="p-2 sm:p-3 rounded-full border border-gray-300 hover:border-gold hover:bg-gold hover:text-white transition-all duration-300"
             aria-label="Scroll right"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
